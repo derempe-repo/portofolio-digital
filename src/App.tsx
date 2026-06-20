@@ -359,7 +359,7 @@ function SceneLayer() {
       ) : (
         <iframe
           className="spline-background"
-          src="https://my.spline.design/orb-PmtAsCd9RoO2JFG16oN3YE91/"
+          src="https://my.spline.design/orb-tUXdfSlvtpiAaJO6o2PwnUUR/"
           title="Animasi latar 3D Orbital Archive"
           frameBorder="0"
           width="100%"
