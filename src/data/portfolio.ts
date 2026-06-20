@@ -1,18 +1,4 @@
-import {
-  BracketsCurly,
-  ChartLineUp,
-  Code,
-  Database,
-  DeviceMobile,
-  FigmaLogo,
-  GithubLogo,
-  GlobeHemisphereWest,
-  LinkedinLogo,
-  Palette,
-  Phone,
-  PresentationChart,
-  UsersThree,
-} from "@phosphor-icons/react";
+import { BracketsCurly, ChartLineUp, Code, Database, DeviceMobile, FigmaLogo, GithubLogo, GlobeHemisphereWest, LinkedinLogo, Palette, Phone, PresentationChart, UsersThree } from "@phosphor-icons/react";
 import type { Icon } from "@phosphor-icons/react";
 
 export type NavItem = {
@@ -61,10 +47,10 @@ export const navItems: NavItem[] = [
 ];
 
 export const profileFacts: ProfileFact[] = [
-  { label: "Nama lengkap", value: "Bayu Widiartana" },
-  { label: "Program studi", value: "Informatika" },
-  { label: "Fokus utama", value: "Web engineering, UI motion, dan sistem informasi" },
-  { label: "Tujuan karier", value: "Menjadi software engineer yang membangun produk digital berdampak." },
+  { label: "Nama lengkap", value: "I Putu Bayu Widiartana" },
+  { label: "Program studi", value: "Teknologi Informasi" },
+  { label: "Fokus utama", value: "Full-Stack Web Development" },
+  { label: "Tujuan karier", value: "Menjadi Web Developer yang membangun produk digital berdampak." },
 ];
 
 export const projects: Project[] = [
@@ -75,15 +61,11 @@ export const projects: Project[] = [
     image: "/project-akademik.png",
     imageAlt: "Mockup dashboard sistem informasi akademik dengan tabel data dan grafik ringkasan",
     link: "https://github.com/bayuwidiartana/sistem-informasi-akademik-mini",
-    background:
-      "Administrasi data akademik sering tersebar di banyak dokumen sehingga proses pencarian dan pembaruan data menjadi lambat.",
-    goal:
-      "Membuat prototipe sistem yang membantu pengelolaan data mahasiswa, mata kuliah, dan nilai secara lebih terstruktur.",
-    role:
-      "Merancang alur fitur, membangun antarmuka, membuat skema basis data, dan menguji alur input data.",
+    background: "Administrasi data akademik sering tersebar di banyak dokumen sehingga proses pencarian dan pembaruan data menjadi lambat.",
+    goal: "Membuat prototipe sistem yang membantu pengelolaan data mahasiswa, mata kuliah, dan nilai secara lebih terstruktur.",
+    role: "Merancang alur fitur, membangun antarmuka, membuat skema basis data, dan menguji alur input data.",
     tools: ["React", "Node.js", "PostgreSQL", "Supabase"],
-    result:
-      "Prototipe berjalan dengan fitur pencatatan data, pencarian cepat, dan tampilan ringkasan akademik.",
+    result: "Prototipe berjalan dengan fitur pencatatan data, pencarian cepat, dan tampilan ringkasan akademik.",
   },
   {
     title: "Dashboard Analisis Data UMKM",
@@ -92,15 +74,11 @@ export const projects: Project[] = [
     image: "/project-umkm.png",
     imageAlt: "Mockup dashboard analisis data UMKM dengan grafik tren dan metrik penjualan",
     link: "https://github.com/bayuwidiartana/dashboard-analisis-umkm",
-    background:
-      "Pelaku UMKM membutuhkan cara sederhana untuk membaca tren penjualan tanpa harus membuka banyak lembar kerja manual.",
-    goal:
-      "Menyajikan data transaksi menjadi insight visual yang mudah dipahami untuk evaluasi penjualan mingguan.",
-    role:
-      "Membersihkan data, menentukan metrik utama, membuat visualisasi, dan menyusun dashboard responsif.",
+    background: "Pelaku UMKM membutuhkan cara sederhana untuk membaca tren penjualan tanpa harus membuka banyak lembar kerja manual.",
+    goal: "Menyajikan data transaksi menjadi insight visual yang mudah dipahami untuk evaluasi penjualan mingguan.",
+    role: "Membersihkan data, menentukan metrik utama, membuat visualisasi, dan menyusun dashboard responsif.",
     tools: ["Python", "Pandas", "React", "Chart.js"],
-    result:
-      "Dashboard menampilkan tren omzet, produk unggulan, dan ringkasan performa yang siap dipresentasikan.",
+    result: "Dashboard menampilkan tren omzet, produk unggulan, dan ringkasan performa yang siap dipresentasikan.",
   },
   {
     title: "Website Kampanye Organisasi",
@@ -109,15 +87,11 @@ export const projects: Project[] = [
     image: "/project-kampanye.png",
     imageAlt: "Mockup website kampanye organisasi dengan tampilan desktop dan mobile",
     link: "https://github.com/bayuwidiartana/website-kampanye-organisasi",
-    background:
-      "Kegiatan organisasi membutuhkan halaman publik yang mampu menjelaskan program, agenda, dan ajakan partisipasi secara jelas.",
-    goal:
-      "Membangun landing page informatif dengan struktur konten ringkas, visual kuat, dan navigasi yang mudah dipahami.",
-    role:
-      "Menyusun copy, membuat rancangan visual, membangun halaman frontend, dan mengoptimalkan tampilan mobile.",
+    background: "Kegiatan organisasi membutuhkan halaman publik yang mampu menjelaskan program, agenda, dan ajakan partisipasi secara jelas.",
+    goal: "Membangun landing page informatif dengan struktur konten ringkas, visual kuat, dan navigasi yang mudah dipahami.",
+    role: "Menyusun copy, membuat rancangan visual, membangun halaman frontend, dan mengoptimalkan tampilan mobile.",
     tools: ["Figma", "Vite", "React", "Motion"],
-    result:
-      "Halaman kampanye siap digunakan untuk publikasi kegiatan dan membantu calon peserta memahami program.",
+    result: "Halaman kampanye siap digunakan untuk publikasi kegiatan dan membantu calon peserta memahami program.",
   },
 ];
 
@@ -130,7 +104,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Bahasa Pemrograman",
     icon: BracketsCurly,
-    items: ["JavaScript", "TypeScript", "Python", "SQL"],
+    items: ["JavaScript", "TypeScript", "Python", "PHP"],
   },
   {
     title: "Software dan Tools",
@@ -145,7 +119,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Analisis Data",
     icon: ChartLineUp,
-    items: ["Data cleaning", "Dashboard", "Visualisasi data", "Interpretasi metrik"],
+    items: ["Data cleaning", "Dashboard", "Visualisasi data", "Machine learning dasar"],
   },
   {
     title: "Soft Skill",
@@ -157,8 +131,8 @@ export const skillGroups: SkillGroup[] = [
 export const contactItems: ContactItem[] = [
   {
     label: "Email",
-    value: "bayu.portfolio@example.com",
-    href: "mailto:bayu.portfolio@example.com",
+    value: "putuwidiart105@gmail.com",
+    href: "mailto:putuwidiart105@gmail.com",
     icon: GlobeHemisphereWest,
   },
   {
@@ -169,14 +143,14 @@ export const contactItems: ContactItem[] = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/bayuwidiartana",
-    href: "https://www.linkedin.com/in/bayuwidiartana",
+    value: "www.linkedin.com/in/bayu-widiartana",
+    href: "https://www.linkedin.com/in/bayu-widiartana-7503251a8",
     icon: LinkedinLogo,
   },
   {
     label: "GitHub",
-    value: "github.com/bayuwidiartana",
-    href: "https://github.com/bayuwidiartana",
+    value: "github.com/tubayu",
+    href: "https://github.com/tubayu?tab=repositories",
     icon: GithubLogo,
   },
 ];

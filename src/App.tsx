@@ -36,7 +36,7 @@ function Header({ activeId }: { activeId: string }) {
   return (
     <header className="site-header">
       <a className="brand-mark" href="#home" aria-label="Kembali ke bagian Home">
-        BA
+        BW
       </a>
 
       <nav className="site-nav" aria-label="Navigasi utama">
@@ -61,9 +61,9 @@ function Hero() {
   return (
     <section className="hero section-panel" id="home" aria-labelledby="hero-title">
       <div className="hero-content">
-        <p className="section-kicker">Orbital Archive</p>
-        <h1 id="hero-title">Arsip karya web dan data.</h1>
-        <p className="hero-copy">Saya Bayu Widiartana, mahasiswa Informatika yang membangun pengalaman digital rapi, cepat, dan bermakna.</p>
+        <p className="section-kicker">Portofolio Digital</p>
+        <h1 id="hero-title">Bayu Widiartana</h1>
+        <p className="hero-copy">Mahasiswa Teknologi Informasi di ITB STIKOM Bali dengan fokus pada pengembangan web dan desain antarmuka.</p>
         <div className="hero-actions" aria-label="Aksi utama">
           <a className="button primary" href="#projects">
             Lihat Proyek
@@ -87,13 +87,13 @@ function Profile() {
     <section className="section-panel profile-section" id="profile" aria-labelledby="profile-title">
       <Reveal className="section-heading compact">
         <h2 id="profile-title">Profil Diri</h2>
-        <p>Portofolio ini disusun sebagai arsip ringkas tentang latar belakang, minat, dan arah karier profesional.</p>
+        <p>Berikut adalah beberapa informasi tentang latar belakang dan minat saya dalam pengembangan web.</p>
       </Reveal>
 
       <div className="profile-layout">
         <Reveal className="profile-statement">
           <p>Saya memiliki minat pada pengembangan web, desain antarmuka, animasi UI, dan pengolahan data. Dalam proses belajar, saya terbiasa mengubah kebutuhan menjadi tampilan yang mudah dipakai dan dapat dijelaskan secara runtut.</p>
-          <p>Tujuan karier saya adalah menjadi software engineer yang mampu membangun produk digital dengan struktur teknis kuat, pengalaman pengguna baik, dan komunikasi hasil kerja yang jelas.</p>
+          <p>Tujuan karier saya adalah menjadi Web Developer yang mampu membangun produk digital dengan struktur teknis kuat, pengalaman pengguna baik, dan komunikasi hasil kerja yang jelas.</p>
         </Reveal>
 
         <Reveal className="fact-grid" delay={0.1}>
@@ -278,7 +278,7 @@ function Projects() {
     <section className="section-panel projects-section" id="projects" aria-labelledby="projects-title">
       <Reveal className="section-heading">
         <h2 id="projects-title">Daftar Proyek Terbaik</h2>
-        <p>Setiap proyek ditampilkan sebagai arsip visual ringkas. Detail lengkap tetap tersedia saat dibutuhkan tanpa membuat halaman utama terasa padat.</p>
+        <p>Berikut adalah beberapa proyek yang telah saya kerjakan, menunjukkan kemampuan dan pengalaman dalam pengembangan web.</p>
       </Reveal>
 
       <div className="project-gallery">
@@ -297,7 +297,7 @@ function Skills() {
     <section className="section-panel skills-section" id="skills" aria-labelledby="skills-title">
       <Reveal className="section-heading compact">
         <h2 id="skills-title">Skill yang Dimiliki</h2>
-        <p>Skill dikelompokkan agar mudah dibaca: teknis, software, desain, analisis data, dan kemampuan interpersonal.</p>
+        <p>Berikut adalah beberapa skill yang telah saya kuasai dalam pengembangan web.</p>
       </Reveal>
 
       <div className="skills-grid">
@@ -332,7 +332,7 @@ function Contact() {
         <div>
           <Sparkle aria-hidden="true" weight="duotone" className="contact-icon" />
           <h2 id="contact-title">Mari Terhubung</h2>
-          <p>Kontak berikut adalah placeholder profesional. Ganti dengan email, LinkedIn, GitHub, atau nomor aktif saat data asli sudah tersedia.</p>
+          <p>Saya terbuka untuk diskusi tentang peluang kerja, proyek kolaboratif, atau sekadar bertukar ide. Jangan ragu untuk menghubungi saya!</p>
         </div>
 
         <div className="contact-list">
@@ -355,6 +355,7 @@ function Contact() {
   );
 }
 
+// Main application component
 export default function App() {
   const sectionIds = navItems.map((item) => item.href.replace("#", ""));
   const activeId = useActiveSection(sectionIds);
@@ -387,11 +388,11 @@ export default function App() {
 
       <footer className="site-footer">
         <span>Bayu Widiartana</span>
-        <a href="mailto:bayu.portfolio@example.com">
+        <a href="mailto:putuwidiart105@gmail.com">
           <EnvelopeSimple aria-hidden="true" weight="duotone" />
           Email
         </a>
-        <a href="https://github.com/bayuwidiartana" target="_blank" rel="noreferrer">
+        <a href="https://github.com/tubayu" target="_blank" rel="noreferrer">
           <GithubLogo aria-hidden="true" weight="duotone" />
           GitHub
         </a>
