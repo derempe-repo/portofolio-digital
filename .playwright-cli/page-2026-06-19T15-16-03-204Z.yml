@@ -1,0 +1,296 @@
+- generic [ref=e3]:
+  - iframe [ref=e4]:
+    - link [ref=f1e3] [cursor=pointer]:
+      - /url: https://spline.design/?utm_source=public-url&utm_campaign=spline-logo
+      - img [ref=f1e5]
+  - banner [ref=e5]:
+    - link "Kembali ke bagian Home" [ref=e6] [cursor=pointer]:
+      - /url: "#home"
+      - text: BA
+    - navigation "Navigasi utama" [ref=e7]:
+      - link "Home" [ref=e8] [cursor=pointer]:
+        - /url: "#home"
+      - link "Profil" [ref=e9] [cursor=pointer]:
+        - /url: "#profile"
+      - link "Proyek" [ref=e10] [cursor=pointer]:
+        - /url: "#projects"
+      - link "Skill" [ref=e11] [cursor=pointer]:
+        - /url: "#skills"
+      - link "Kontak" [ref=e12] [cursor=pointer]:
+        - /url: "#contact"
+    - link "Kontak" [ref=e13] [cursor=pointer]:
+      - /url: "#contact"
+  - main [ref=e14]:
+    - region "Arsip karya web dan data." [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]: Orbital Archive
+        - heading "Arsip karya web dan data." [level=1] [ref=e18]
+        - paragraph [ref=e19]: Saya Bayu Widiartana, mahasiswa Informatika yang membangun pengalaman digital rapi, cepat, dan bermakna.
+        - generic "Aksi utama" [ref=e20]:
+          - link "Lihat Proyek" [ref=e21] [cursor=pointer]:
+            - /url: "#projects"
+            - text: Lihat Proyek
+            - img [ref=e22]
+          - link "Profil Saya" [ref=e24] [cursor=pointer]:
+            - /url: "#profile"
+      - generic "Foto profesional placeholder" [ref=e25]:
+        - img "Foto profesional placeholder Bayu Widiartana" [ref=e26]
+        - generic [ref=e27]:
+          - generic [ref=e28]: Placeholder foto profesional
+          - strong [ref=e29]: Siap diganti dengan foto asli.
+    - region "Profil Diri" [ref=e30]:
+      - generic [ref=e31]:
+        - heading "Profil Diri" [level=2] [ref=e32]
+        - paragraph [ref=e33]: Portofolio ini disusun sebagai arsip ringkas tentang latar belakang, minat, dan arah karier profesional.
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Saya memiliki minat pada pengembangan web, desain antarmuka, animasi UI, dan pengolahan data. Dalam proses belajar, saya terbiasa mengubah kebutuhan menjadi tampilan yang mudah dipakai dan dapat dijelaskan secara runtut.
+          - paragraph [ref=e37]: Tujuan karier saya adalah menjadi software engineer yang mampu membangun produk digital dengan struktur teknis kuat, pengalaman pengguna baik, dan komunikasi hasil kerja yang jelas.
+        - generic [ref=e38]:
+          - article [ref=e39]:
+            - generic [ref=e40]: Nama lengkap
+            - strong [ref=e41]: Bayu Widiartana
+          - article [ref=e42]:
+            - generic [ref=e43]: Program studi
+            - strong [ref=e44]: Informatika
+          - article [ref=e45]:
+            - generic [ref=e46]: Fokus utama
+            - strong [ref=e47]: Web engineering, UI motion, dan sistem informasi
+          - article [ref=e48]:
+            - generic [ref=e49]: Tujuan karier
+            - strong [ref=e50]: Menjadi software engineer yang membangun produk digital berdampak.
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - heading "Antarmuka yang adaptif" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Membangun halaman yang tetap nyaman dibaca di layar kecil dan besar.
+        - generic [ref=e58]:
+          - img [ref=e59]
+          - heading "Data yang terstruktur" [level=3] [ref=e62]
+          - paragraph [ref=e63]: Menyusun informasi menjadi alur yang rapi dari input, proses, hingga output.
+        - generic [ref=e64]:
+          - img [ref=e65]
+          - heading "Presentasi yang jelas" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Mengubah hasil kerja menjadi cerita visual yang mudah dipahami.
+    - region "Daftar Proyek Terbaik" [ref=e70]:
+      - generic [ref=e71]:
+        - heading "Daftar Proyek Terbaik" [level=2] [ref=e72]
+        - paragraph [ref=e73]: Setiap proyek ditampilkan sebagai arsip visual ringkas. Detail lengkap tetap tersedia saat dibutuhkan tanpa membuat halaman utama terasa padat.
+      - generic [ref=e74]:
+        - article [ref=e76]:
+          - img "Mockup dashboard sistem informasi akademik dengan tabel data dan grafik ringkasan" [ref=e78]
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - generic [ref=e81]: Tugas kuliah
+              - generic [ref=e82]: "01"
+            - heading "Sistem Informasi Akademik Mini" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Prototipe sistem akademik untuk mengelola data mahasiswa, mata kuliah, dan nilai secara terstruktur.
+            - generic "Teknologi untuk Sistem Informasi Akademik Mini" [ref=e85]:
+              - generic [ref=e86]: React
+              - generic [ref=e87]: Node.js
+              - generic [ref=e88]: PostgreSQL
+              - generic [ref=e89]: Supabase
+          - generic [ref=e90]:
+            - button "Lihat Detail" [ref=e91] [cursor=pointer]:
+              - img [ref=e92]
+              - text: Lihat Detail
+            - link "Link Proyek" [ref=e95] [cursor=pointer]:
+              - /url: https://github.com/bayuwidiartana/sistem-informasi-akademik-mini
+              - text: Link Proyek
+              - img [ref=e96]
+        - article [ref=e99]:
+          - img "Mockup dashboard analisis data UMKM dengan grafik tren dan metrik penjualan" [ref=e101]
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]: Proyek pribadi
+              - generic [ref=e105]: "02"
+            - heading "Dashboard Analisis Data UMKM" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Dashboard analitik untuk membaca tren penjualan, produk unggulan, dan performa mingguan UMKM.
+            - generic "Teknologi untuk Dashboard Analisis Data UMKM" [ref=e108]:
+              - generic [ref=e109]: Python
+              - generic [ref=e110]: Pandas
+              - generic [ref=e111]: React
+              - generic [ref=e112]: Chart.js
+          - generic [ref=e113]:
+            - button "Lihat Detail" [ref=e114] [cursor=pointer]:
+              - img [ref=e115]
+              - text: Lihat Detail
+            - link "Link Proyek" [ref=e118] [cursor=pointer]:
+              - /url: https://github.com/bayuwidiartana/dashboard-analisis-umkm
+              - text: Link Proyek
+              - img [ref=e119]
+        - article [ref=e122]:
+          - img "Mockup website kampanye organisasi dengan tampilan desktop dan mobile" [ref=e124]
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - generic [ref=e127]: Proyek organisasi
+              - generic [ref=e128]: "03"
+            - heading "Website Kampanye Organisasi" [level=3] [ref=e129]
+            - paragraph [ref=e130]: Landing page kampanye organisasi dengan struktur informasi publik, agenda, dan ajakan partisipasi.
+            - generic "Teknologi untuk Website Kampanye Organisasi" [ref=e131]:
+              - generic [ref=e132]: Figma
+              - generic [ref=e133]: Vite
+              - generic [ref=e134]: React
+              - generic [ref=e135]: Motion
+          - generic [ref=e136]:
+            - button "Lihat Detail" [ref=e137] [cursor=pointer]:
+              - img [ref=e138]
+              - text: Lihat Detail
+            - link "Link Proyek" [ref=e141] [cursor=pointer]:
+              - /url: https://github.com/bayuwidiartana/website-kampanye-organisasi
+              - text: Link Proyek
+              - img [ref=e142]
+    - region "Skill yang Dimiliki" [ref=e144]:
+      - generic [ref=e145]:
+        - heading "Skill yang Dimiliki" [level=2] [ref=e146]
+        - paragraph [ref=e147]: "Skill dikelompokkan agar mudah dibaca: teknis, software, desain, analisis data, dan kemampuan interpersonal."
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - img [ref=e151]
+            - heading "Technical Skill" [level=3] [ref=e154]
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - img [ref=e157]
+              - text: Frontend development
+            - listitem [ref=e159]:
+              - img [ref=e160]
+              - text: Responsive layout
+            - listitem [ref=e162]:
+              - img [ref=e163]
+              - text: API integration
+            - listitem [ref=e165]:
+              - img [ref=e166]
+              - text: Database modeling
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - img [ref=e170]
+            - heading "Bahasa Pemrograman" [level=3] [ref=e173]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - img [ref=e176]
+              - text: JavaScript
+            - listitem [ref=e178]:
+              - img [ref=e179]
+              - text: TypeScript
+            - listitem [ref=e181]:
+              - img [ref=e182]
+              - text: Python
+            - listitem [ref=e184]:
+              - img [ref=e185]
+              - text: SQL
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - img [ref=e189]
+            - heading "Software dan Tools" [level=3] [ref=e192]
+          - list [ref=e193]:
+            - listitem [ref=e194]:
+              - img [ref=e195]
+              - text: Figma
+            - listitem [ref=e197]:
+              - img [ref=e198]
+              - text: GitHub
+            - listitem [ref=e200]:
+              - img [ref=e201]
+              - text: VS Code
+            - listitem [ref=e203]:
+              - img [ref=e204]
+              - text: Supabase
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - img [ref=e208]
+            - heading "Desain dan Motion" [level=3] [ref=e211]
+          - list [ref=e212]:
+            - listitem [ref=e213]:
+              - img [ref=e214]
+              - text: UI design
+            - listitem [ref=e216]:
+              - img [ref=e217]
+              - text: Design system dasar
+            - listitem [ref=e219]:
+              - img [ref=e220]
+              - text: Micro-interaction
+            - listitem [ref=e222]:
+              - img [ref=e223]
+              - text: Prototyping
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - img [ref=e227]
+            - heading "Analisis Data" [level=3] [ref=e230]
+          - list [ref=e231]:
+            - listitem [ref=e232]:
+              - img [ref=e233]
+              - text: Data cleaning
+            - listitem [ref=e235]:
+              - img [ref=e236]
+              - text: Dashboard
+            - listitem [ref=e238]:
+              - img [ref=e239]
+              - text: Visualisasi data
+            - listitem [ref=e241]:
+              - img [ref=e242]
+              - text: Interpretasi metrik
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - img [ref=e246]
+            - heading "Soft Skill" [level=3] [ref=e249]
+          - list [ref=e250]:
+            - listitem [ref=e251]:
+              - img [ref=e252]
+              - text: Komunikasi
+            - listitem [ref=e254]:
+              - img [ref=e255]
+              - text: Kepemimpinan
+            - listitem [ref=e257]:
+              - img [ref=e258]
+              - text: Kolaborasi
+            - listitem [ref=e260]:
+              - img [ref=e261]
+              - text: Manajemen waktu
+    - region "Mari Terhubung" [ref=e263]:
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - img [ref=e266]
+          - heading "Mari Terhubung" [level=2] [ref=e269]
+          - paragraph [ref=e270]: Kontak berikut adalah placeholder profesional. Ganti dengan email, LinkedIn, GitHub, atau nomor aktif saat data asli sudah tersedia.
+        - generic [ref=e271]:
+          - link "Email bayu.portfolio@example.com" [ref=e272] [cursor=pointer]:
+            - /url: mailto:bayu.portfolio@example.com
+            - img [ref=e273]
+            - generic [ref=e276]:
+              - generic [ref=e277]: Email
+              - strong [ref=e278]: bayu.portfolio@example.com
+            - img [ref=e279]
+          - link "Telepon +62 812-3456-7890" [ref=e281] [cursor=pointer]:
+            - /url: tel:+6281234567890
+            - img [ref=e282]
+            - generic [ref=e285]:
+              - generic [ref=e286]: Telepon
+              - strong [ref=e287]: +62 812-3456-7890
+            - img [ref=e288]
+          - link "LinkedIn linkedin.com/in/bayuwidiartana" [ref=e290] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/bayuwidiartana
+            - img [ref=e291]
+            - generic [ref=e294]:
+              - generic [ref=e295]: LinkedIn
+              - strong [ref=e296]: linkedin.com/in/bayuwidiartana
+            - img [ref=e297]
+          - link "GitHub github.com/bayuwidiartana" [ref=e299] [cursor=pointer]:
+            - /url: https://github.com/bayuwidiartana
+            - img [ref=e300]
+            - generic [ref=e303]:
+              - generic [ref=e304]: GitHub
+              - strong [ref=e305]: github.com/bayuwidiartana
+            - img [ref=e306]
+  - contentinfo [ref=e308]:
+    - generic [ref=e309]: Bayu Widiartana
+    - link "Email" [ref=e310] [cursor=pointer]:
+      - /url: mailto:bayu.portfolio@example.com
+      - img [ref=e311]
+      - text: Email
+    - link "GitHub" [ref=e314] [cursor=pointer]:
+      - /url: https://github.com/bayuwidiartana
+      - img [ref=e315]
+      - text: GitHub
+    - link "Kembali ke atas" [ref=e318] [cursor=pointer]:
+      - /url: "#home"
