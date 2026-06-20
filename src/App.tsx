@@ -50,8 +50,8 @@ function Header({ activeId }: { activeId: string }) {
         })}
       </nav>
 
-      <a className="nav-contact" href="#contact">
-        Kontak
+      <a className="nav-contact" href="https://www.canva.com/design/DAHIDbyiUAc/MUQ6LQRl_ofzA8QlRVv3-g/edit?utm_content=DAHIDbyiUAc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noreferrer">
+        Open CV
       </a>
     </header>
   );
