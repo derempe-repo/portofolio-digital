@@ -1,6 +1,5 @@
 import { ArrowUpRight, CheckCircle, EnvelopeSimple, GithubLogo, Sparkle, X } from "@phosphor-icons/react";
-import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Reveal } from "./components/Reveal";
 import { contactItems, navItems, profileFacts, profileHighlights, projects, skillGroups } from "./data/portfolio";
@@ -30,6 +29,22 @@ function useActiveSection(sectionIds: string[]) {
   }, [sectionIds]);
 
   return activeId;
+}
+
+function useMediaQuery(query: string) {
+  const getMatches = () => typeof window !== "undefined" && window.matchMedia(query).matches;
+  const [matches, setMatches] = useState(getMatches);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    const updateMatches = () => setMatches(mediaQuery.matches);
+
+    updateMatches();
+    mediaQuery.addEventListener("change", updateMatches);
+    return () => mediaQuery.removeEventListener("change", updateMatches);
+  }, [query]);
+
+  return matches;
 }
 
 function Header({ activeId }: { activeId: string }) {
@@ -76,7 +91,7 @@ function Hero() {
       </div>
 
       <div className="hero-portrait" aria-label="Foto profesional placeholder">
-        <img src="/foto-profile.png" alt="Foto profesional placeholder Bayu Widiartana" />
+        <img src="/foto-profile.webp" alt="Foto profesional placeholder Bayu Widiartana" width="500" height="500" decoding="async" />
       </div>
     </section>
   );
@@ -123,33 +138,20 @@ function Profile() {
 }
 
 function ProjectPreviewImage({ project }: { project: Project }) {
-  const imageRef = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ["start end", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
-
   return (
-    <div className="project-image-frame" ref={imageRef}>
-      <motion.img src={project.image} alt={project.imageAlt} loading="lazy" style={shouldReduceMotion ? undefined : { y: imageY }} />
+    <div className="project-image-frame">
+      <picture>
+        <source media="(max-width: 680px)" srcSet={project.cardImage.mobile} />
+        <img src={project.cardImage.desktop} alt={project.cardImage.alt} width={project.cardImage.width} height={project.cardImage.height} loading="lazy" decoding="async" />
+      </picture>
     </div>
   );
 }
 
 function ProjectCard({ project, index, onSelect }: { project: Project; index: number; onSelect: (project: Project) => void }) {
-  const cardRef = useRef<HTMLElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
-  });
-  const cardY = useTransform(scrollYProgress, [0, 1], index % 2 === 0 ? [18, -18] : [34, -10]);
-
   return (
-    <Reveal delay={index * 0.06}>
-      <motion.article className="project-card" ref={cardRef} style={shouldReduceMotion ? undefined : { y: cardY }}>
+    <Reveal>
+      <article className="project-card">
         <ProjectPreviewImage project={project} />
 
         <div className="project-card-body">
@@ -177,34 +179,23 @@ function ProjectCard({ project, index, onSelect }: { project: Project; index: nu
             <ArrowUpRight aria-hidden="true" weight="bold" />
           </a>
         </div>
-      </motion.article>
+      </article>
     </Reveal>
   );
 }
 
 function ProjectDetailModal({ project, onClose }: { project: Project; onClose: () => void }) {
   return createPortal(
-    <motion.div className="project-detail-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
-      <motion.article
-        className="project-detail-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="project-detail-title"
-        aria-describedby="project-detail-summary"
-        initial={{ opacity: 0, y: 24, scale: 0.98 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 16, scale: 0.98 }}
-        transition={{ duration: 0.22, ease: "easeOut" }}
-        onClick={(event) => event.stopPropagation()}
-      >
+    <div className="project-detail-backdrop" onClick={onClose}>
+      <article className="project-detail-modal" role="dialog" aria-modal="true" aria-labelledby="project-detail-title" aria-describedby="project-detail-summary" onClick={(event) => event.stopPropagation()}>
         <button className="detail-close" type="button" onClick={onClose} aria-label="Tutup detail proyek" autoFocus>
           <X aria-hidden="true" weight="bold" />
         </button>
 
         <div className="detail-visual">
           <picture>
-            <source media="(max-width: 680px)" srcSet={project.image} />
-            <img src={project.detailImage} alt={project.detailImageAlt} />
+            <source media="(max-width: 680px)" srcSet={project.cardImage.mobile} />
+            <img src={project.detailImage.desktop} alt={project.detailImage.alt} width={project.detailImage.width} height={project.detailImage.height} loading="lazy" decoding="async" />
           </picture>
         </div>
 
@@ -250,8 +241,8 @@ function ProjectDetailModal({ project, onClose }: { project: Project; onClose: (
             </a>
           </div>
         </div>
-      </motion.article>
-    </motion.div>,
+      </article>
+    </div>,
     document.body,
   );
 }
@@ -290,7 +281,7 @@ function Projects() {
         ))}
       </div>
 
-      <AnimatePresence>{selectedProject ? <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}</AnimatePresence>
+      {selectedProject ? <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}
     </section>
   );
 }
@@ -358,16 +349,14 @@ function Contact() {
   );
 }
 
-// Main application component
-export default function App() {
-  const sectionIds = navItems.map((item) => item.href.replace("#", ""));
-  const activeId = useActiveSection(sectionIds);
-  const { scrollYProgress } = useScroll();
+function SceneLayer() {
+  const useStaticPoster = useMediaQuery("(max-width: 680px)");
 
   return (
-    <div className="app-shell">
-      <motion.div className="scroll-progress" style={{ scaleX: scrollYProgress }} />
-      <div className="scene-layer" aria-hidden="true">
+    <div className="scene-layer" aria-hidden="true">
+      {useStaticPoster ? (
+        <img className="scene-poster" src="/orbital-archive-mobile.webp" alt="" width="768" height="1280" decoding="async" />
+      ) : (
         <iframe
           className="spline-background"
           src="https://my.spline.design/orb-PmtAsCd9RoO2JFG16oN3YE91/"
@@ -377,7 +366,19 @@ export default function App() {
           height="100%"
           allow="autoplay; fullscreen; xr-spatial-tracking"
         />
-      </div>
+      )}
+    </div>
+  );
+}
+
+// Main application component
+export default function App() {
+  const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+  const activeId = useActiveSection(sectionIds);
+
+  return (
+    <div className="app-shell">
+      <SceneLayer />
 
       <Header activeId={activeId} />
 

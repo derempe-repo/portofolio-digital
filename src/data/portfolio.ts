@@ -15,10 +15,19 @@ export type Project = {
   title: string;
   type: string;
   summary: string;
-  image: string;
-  imageAlt: string;
-  detailImage: string;
-  detailImageAlt: string;
+  cardImage: {
+    desktop: string;
+    mobile: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  detailImage: {
+    desktop: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   link: string;
   background: string;
   goal: string;
@@ -60,10 +69,19 @@ export const projects: Project[] = [
     title: "Landing Page ForeverBarber Bali",
     type: "Lomba Web Creation Competition - 2026",
     summary: "Landing page untuk ForeverBarber Bali yang menampilkan layanan, galeri, dan formulir pemesanan online.",
-    image: "/forever-barber-depan.png",
-    imageAlt: "hero section landing page ForeverBarber Bali dengan gambar layanan dan tombol pemesanan",
-    detailImage: "/forever-barber-detail.png",
-    detailImageAlt: "Mockup detail website ForeverBarber Bali dengan layanan, galeri, dan formulir reservasi",
+    cardImage: {
+      desktop: "/forever-barber-depan-desktop.webp",
+      mobile: "/forever-barber-depan-mobile.webp",
+      alt: "hero section landing page ForeverBarber Bali dengan gambar layanan dan tombol pemesanan",
+      width: 1280,
+      height: 720,
+    },
+    detailImage: {
+      desktop: "/forever-barber-detail-desktop.webp",
+      alt: "Mockup detail website ForeverBarber Bali dengan layanan, galeri, dan formulir reservasi",
+      width: 1280,
+      height: 2276,
+    },
     link: "https://foreverbarber.web.id/",
     background:
       "Proyek ini dibuat dalam rangka Lomba Web Creation Competition - 2026 yang bertemakan digitalisasi UMKM, yang dilatarbelakangi untuk membantu Forever Barber Bali memiliki media promosi dan layanan digital yang modern, informatif, serta memudahkan pelanggan melihat layanan, memilih barber, memperoleh rekomendasi gaya rambut, dan melakukan reservasi.",
@@ -77,10 +95,19 @@ export const projects: Project[] = [
     title: "Web LMS (Learning Management System) Edutrack-COE",
     type: "Tugas Kuliah - 2026",
     summary: "Web LMS untuk mendukung proses pembelajaran digital dengan fitur manajemen kelas, materi, tugas, kuis, nilai, dan sertifikat digital.",
-    image: "/edutrack-depan.png",
-    imageAlt: "edutrack lms",
-    detailImage: "/edutrack-detail.png",
-    detailImageAlt: "edutrack lms detail",
+    cardImage: {
+      desktop: "/edutrack-depan-desktop.webp",
+      mobile: "/edutrack-depan-mobile.webp",
+      alt: "Tampilan dashboard Learning Management System Edutrack-COE",
+      width: 1280,
+      height: 801,
+    },
+    detailImage: {
+      desktop: "/edutrack-detail-desktop.webp",
+      alt: "Tampilan detail Learning Management System Edutrack-COE",
+      width: 1280,
+      height: 1600,
+    },
     link: "https://edutrack-coe.vercel.app/login",
     background:
       "Proyek merupakan tugas UAS mata kuliah Proyek Pengembangan TI, latarbelakang proyek ini dibuat untuk mendukung proses pembelajaran digital yang terstruktur, mulai dari penyampaian materi hingga evaluasi hasil belajar. Sistem dirancang agar mahasiswa, dosen, admin, dan super admin memiliki akses serta fitur sesuai perannya.",
@@ -94,10 +121,19 @@ export const projects: Project[] = [
     title: "Web Company Profile Coffee Toffe",
     type: "Proyek Mandiri - 2023",
     summary: "Website company profile Coffee Toffe yang menampilkan menu, galeri, lokasi, dan formulir pemesanan online.",
-    image: "/coffe-toffe-depan.png",
-    imageAlt: "hero section landing page Coffee Toffe dengan gambar menu dan tombol pemesanan",
-    detailImage: "/coffe-toffe-detail.png",
-    detailImageAlt: "Mockup detail website Coffee Toffe dengan menu, galeri, lokasi, dan formulir pemesanan",
+    cardImage: {
+      desktop: "/coffe-toffe-depan-desktop.webp",
+      mobile: "/coffe-toffe-depan-mobile.webp",
+      alt: "hero section landing page Coffee Toffe dengan gambar menu dan tombol pemesanan",
+      width: 1280,
+      height: 720,
+    },
+    detailImage: {
+      desktop: "/coffe-toffe-detail-desktop.webp",
+      alt: "Mockup detail website Coffee Toffe dengan menu, galeri, lokasi, dan formulir pemesanan",
+      width: 1280,
+      height: 1707,
+    },
     link: "https://tubayu.github.io/",
     background: "Proyek ini merupakan latihan pribadi yang dilatarbelakangi oleh kebutuhan Coffe Toffe untuk memiliki media digital yang mampu memperkenalkan brand dan produk secara lebih luas dan profesional.",
     goal: "Tujuannya adalah membangun website company profile yang informatif, menarik, dan mudah diakses oleh pengguna.",
