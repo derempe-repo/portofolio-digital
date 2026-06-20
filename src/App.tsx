@@ -202,7 +202,10 @@ function ProjectDetailModal({ project, onClose }: { project: Project; onClose: (
         </button>
 
         <div className="detail-visual">
-          <img src={project.image} alt={project.imageAlt} />
+          <picture>
+            <source media="(max-width: 680px)" srcSet={project.image} />
+            <img src={project.detailImage} alt={project.detailImageAlt} />
+          </picture>
         </div>
 
         <div className="detail-content">

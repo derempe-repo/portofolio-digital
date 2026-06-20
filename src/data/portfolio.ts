@@ -17,6 +17,8 @@ export type Project = {
   summary: string;
   image: string;
   imageAlt: string;
+  detailImage: string;
+  detailImageAlt: string;
   link: string;
   background: string;
   goal: string;
@@ -55,43 +57,53 @@ export const profileFacts: ProfileFact[] = [
 
 export const projects: Project[] = [
   {
-    title: "Sistem Informasi Akademik Mini",
-    type: "Tugas kuliah",
-    summary: "Prototipe sistem akademik untuk mengelola data mahasiswa, mata kuliah, dan nilai secara terstruktur.",
-    image: "/project-akademik.png",
-    imageAlt: "Mockup dashboard sistem informasi akademik dengan tabel data dan grafik ringkasan",
-    link: "https://github.com/bayuwidiartana/sistem-informasi-akademik-mini",
-    background: "Administrasi data akademik sering tersebar di banyak dokumen sehingga proses pencarian dan pembaruan data menjadi lambat.",
-    goal: "Membuat prototipe sistem yang membantu pengelolaan data mahasiswa, mata kuliah, dan nilai secara lebih terstruktur.",
-    role: "Merancang alur fitur, membangun antarmuka, membuat skema basis data, dan menguji alur input data.",
-    tools: ["React", "Node.js", "PostgreSQL", "Supabase"],
-    result: "Prototipe berjalan dengan fitur pencatatan data, pencarian cepat, dan tampilan ringkasan akademik.",
+    title: "Landing Page ForeverBarber Bali",
+    type: "Lomba Web Creation Competition - 2026",
+    summary: "Landing page untuk ForeverBarber Bali yang menampilkan layanan, galeri, dan formulir pemesanan online.",
+    image: "/forever-barber-depan.png",
+    imageAlt: "hero section landing page ForeverBarber Bali dengan gambar layanan dan tombol pemesanan",
+    detailImage: "/forever-barber-detail.png",
+    detailImageAlt: "Mockup detail website ForeverBarber Bali dengan layanan, galeri, dan formulir reservasi",
+    link: "https://foreverbarber.web.id/",
+    background:
+      "Proyek ini dibuat dalam rangka Lomba Web Creation Competition - 2026 yang bertemakan digitalisasi UMKM, yang dilatarbelakangi untuk membantu Forever Barber Bali memiliki media promosi dan layanan digital yang modern, informatif, serta memudahkan pelanggan melihat layanan, memilih barber, memperoleh rekomendasi gaya rambut, dan melakukan reservasi.",
+    goal: "Meningkatkan pengalaman pelanggan melalui website barbershop yang responsif, sekaligus menyediakan fitur konsultasi gaya rambut berbasis AI dan reservasi terintegrasi WhatsApp.",
+    role: "Front-end developer dan UI/UX designer, meliputi perancangan antarmuka, pengembangan fitur interaktif, integrasi AI Advisor/chatbot, galeri, serta formulir booking.",
+    tools: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+    result:
+      "Website company profile barbershop yang responsif dengan katalog layanan dan harga, profil barber, galeri gaya rambut, lokasi, formulir reservasi WhatsApp, chatbot layanan pelanggan, serta AI Advisor untuk menganalisis bentuk wajah dan memberikan rekomendasi gaya rambut.",
   },
   {
-    title: "Dashboard Analisis Data UMKM",
-    type: "Proyek pribadi",
-    summary: "Dashboard analitik untuk membaca tren penjualan, produk unggulan, dan performa mingguan UMKM.",
-    image: "/project-umkm.png",
-    imageAlt: "Mockup dashboard analisis data UMKM dengan grafik tren dan metrik penjualan",
-    link: "https://github.com/bayuwidiartana/dashboard-analisis-umkm",
-    background: "Pelaku UMKM membutuhkan cara sederhana untuk membaca tren penjualan tanpa harus membuka banyak lembar kerja manual.",
-    goal: "Menyajikan data transaksi menjadi insight visual yang mudah dipahami untuk evaluasi penjualan mingguan.",
-    role: "Membersihkan data, menentukan metrik utama, membuat visualisasi, dan menyusun dashboard responsif.",
-    tools: ["Python", "Pandas", "React", "Chart.js"],
-    result: "Dashboard menampilkan tren omzet, produk unggulan, dan ringkasan performa yang siap dipresentasikan.",
+    title: "Web LMS (Learning Management System) Edutrack-COE",
+    type: "Tugas Kuliah - 2026",
+    summary: "Web LMS untuk mendukung proses pembelajaran digital dengan fitur manajemen kelas, materi, tugas, kuis, nilai, dan sertifikat digital.",
+    image: "/edutrack-depan.png",
+    imageAlt: "edutrack lms",
+    detailImage: "/edutrack-detail.png",
+    detailImageAlt: "edutrack lms detail",
+    link: "https://edutrack-coe.vercel.app/login",
+    background:
+      "Proyek merupakan tugas UAS mata kuliah Proyek Pengembangan TI, latarbelakang proyek ini dibuat untuk mendukung proses pembelajaran digital yang terstruktur, mulai dari penyampaian materi hingga evaluasi hasil belajar. Sistem dirancang agar mahasiswa, dosen, admin, dan super admin memiliki akses serta fitur sesuai perannya.",
+    goal: "Memudahkan pengelolaan kelas, modul pembelajaran, tugas, kuis, nilai, progres belajar, forum diskusi, dan penerbitan sertifikat digital dalam satu platform web.",
+    role: "Full-stack developer, meliputi perancangan antarmuka, pengembangan fitur frontend dan backend, perancangan database, implementasi autentikasi berbasis peran, pengelolaan file, serta pengujian aplikasi.",
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Drizzle ORM", "Vercel"],
+    result:
+      "Aplikasi LMS berbasis web dengan dashboard khusus untuk empat role pengguna, pengelolaan kelas dan materi, pengumpulan tugas, kuis dengan koreksi otomatis, pelacakan progres serta nilai, forum dan notifikasi, pengecekan plagiarisme sederhana, export laporan PDF/Excel, serta sertifikat digital dengan QR code untuk verifikasi.",
   },
   {
-    title: "Website Kampanye Organisasi",
-    type: "Proyek organisasi",
-    summary: "Landing page kampanye organisasi dengan struktur informasi publik, agenda, dan ajakan partisipasi.",
-    image: "/project-kampanye.png",
-    imageAlt: "Mockup website kampanye organisasi dengan tampilan desktop dan mobile",
-    link: "https://github.com/bayuwidiartana/website-kampanye-organisasi",
-    background: "Kegiatan organisasi membutuhkan halaman publik yang mampu menjelaskan program, agenda, dan ajakan partisipasi secara jelas.",
-    goal: "Membangun landing page informatif dengan struktur konten ringkas, visual kuat, dan navigasi yang mudah dipahami.",
-    role: "Menyusun copy, membuat rancangan visual, membangun halaman frontend, dan mengoptimalkan tampilan mobile.",
-    tools: ["Figma", "Vite", "React", "Motion"],
-    result: "Halaman kampanye siap digunakan untuk publikasi kegiatan dan membantu calon peserta memahami program.",
+    title: "Web Company Profile Coffee Toffe",
+    type: "Proyek Mandiri - 2023",
+    summary: "Website company profile Coffee Toffe yang menampilkan menu, galeri, lokasi, dan formulir pemesanan online.",
+    image: "/coffe-toffe-depan.png",
+    imageAlt: "hero section landing page Coffee Toffe dengan gambar menu dan tombol pemesanan",
+    detailImage: "/coffe-toffe-detail.png",
+    detailImageAlt: "Mockup detail website Coffee Toffe dengan menu, galeri, lokasi, dan formulir pemesanan",
+    link: "https://tubayu.github.io/",
+    background: "Proyek ini merupakan latihan pribadi yang dilatarbelakangi oleh kebutuhan Coffe Toffe untuk memiliki media digital yang mampu memperkenalkan brand dan produk secara lebih luas dan profesional.",
+    goal: "Tujuannya adalah membangun website company profile yang informatif, menarik, dan mudah diakses oleh pengguna.",
+    role: "Membuat rancangan visual, membangun halaman frontend, dan mengoptimalkan tampilan mobile.",
+    tools: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+    result: "Hasilnya adalah website company profile Coffe Toffe yang mampu menampilkan identitas brand dengan lebih kuat dan memberikan informasi secara efektif kepada pengunjung.",
   },
 ];
 
@@ -99,7 +111,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Technical Skill",
     icon: Code,
-    items: ["Frontend development", "Responsive layout", "API integration", "Database modeling"],
+    items: ["Frontend development", "Responsive layout", "Database modeling"],
   },
   {
     title: "Bahasa Pemrograman",
@@ -109,17 +121,17 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Software dan Tools",
     icon: FigmaLogo,
-    items: ["Figma", "GitHub", "VS Code", "Supabase"],
+    items: ["Figma", "GitHub", "Vercel", "Supabase"],
   },
   {
     title: "Desain dan Motion",
     icon: Palette,
-    items: ["UI design", "Design system dasar", "Micro-interaction", "Prototyping"],
+    items: ["UI/UX design", "Graphic design", "Motion graphics"],
   },
   {
     title: "Analisis Data",
     icon: ChartLineUp,
-    items: ["Data cleaning", "Dashboard", "Visualisasi data", "Machine learning dasar"],
+    items: ["Data cleaning", "Machine learning dasar"],
   },
   {
     title: "Soft Skill",
