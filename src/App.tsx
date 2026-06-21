@@ -91,7 +91,7 @@ function Hero() {
       </div>
 
       <div className="hero-portrait" aria-label="Foto profesional placeholder">
-        <img src="/foto-profile.webp" alt="Foto profesional placeholder Bayu Widiartana" width="500" height="500" decoding="async" />
+        <img src="/foto-profile.webp" alt="Foto profesional placeholder Bayu Widiartana" width="430" height="430" decoding="async" />
       </div>
     </section>
   );
@@ -349,6 +349,30 @@ function Contact() {
   );
 }
 
+function LoadingScreen({ isExiting }: { isExiting: boolean }) {
+  return (
+    <div className={`loading-screen${isExiting ? " is-exiting" : ""}`} role="status" aria-live="polite" aria-label="Memuat portofolio Bayu Widiartana">
+      <div className="loading-content">
+        <div className="loading-orbit" aria-hidden="true">
+          <span className="loading-orbit-track" />
+          <span className="loading-orbit-satellite satellite-one" />
+          <span className="loading-orbit-satellite satellite-two" />
+          <span className="loading-orbit-core">BW</span>
+        </div>
+
+        <div className="loading-copy">
+          <span>Orbital Archive</span>
+          <strong>Memuat portofolio</strong>
+        </div>
+
+        <div className="loading-progress" aria-hidden="true">
+          <span />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SceneLayer() {
   const useStaticPoster = useMediaQuery("(max-width: 680px)");
 
@@ -375,9 +399,58 @@ function SceneLayer() {
 export default function App() {
   const sectionIds = navItems.map((item) => item.href.replace("#", ""));
   const activeId = useActiveSection(sectionIds);
+  const [showLoading, setShowLoading] = useState(true);
+  const [isLoadingExiting, setIsLoadingExiting] = useState(false);
+
+  useEffect(() => {
+    let isPageReady = document.readyState === "complete";
+    let hasReachedMinimumTime = false;
+    let isClosing = false;
+    let exitTimer: number | undefined;
+
+    document.body.classList.add("is-loading");
+
+    const closeLoadingScreen = () => {
+      if (!isPageReady || !hasReachedMinimumTime || isClosing) return;
+
+      isClosing = true;
+      setIsLoadingExiting(true);
+      exitTimer = window.setTimeout(() => {
+        setShowLoading(false);
+        document.body.classList.remove("is-loading");
+      }, 360);
+    };
+
+    const markPageReady = () => {
+      isPageReady = true;
+      closeLoadingScreen();
+    };
+
+    const minimumTimer = window.setTimeout(() => {
+      hasReachedMinimumTime = true;
+      closeLoadingScreen();
+    }, 700);
+
+    const fallbackTimer = window.setTimeout(markPageReady, 1500);
+
+    if (!isPageReady) {
+      window.addEventListener("load", markPageReady, { once: true });
+    }
+
+    closeLoadingScreen();
+
+    return () => {
+      window.clearTimeout(minimumTimer);
+      window.clearTimeout(fallbackTimer);
+      if (exitTimer) window.clearTimeout(exitTimer);
+      window.removeEventListener("load", markPageReady);
+      document.body.classList.remove("is-loading");
+    };
+  }, []);
 
   return (
     <div className="app-shell">
+      {showLoading ? <LoadingScreen isExiting={isLoadingExiting} /> : null}
       <SceneLayer />
 
       <Header activeId={activeId} />
