@@ -91,7 +91,7 @@ function Hero() {
       </div>
 
       <div className="hero-portrait" aria-label="Foto profesional placeholder">
-        <img src="/foto-profile.webp" alt="Foto profesional placeholder Bayu Widiartana" width="430" height="430" decoding="async" />
+        <img src="/foto-profile.webp" alt="Foto profesional placeholder Bayu Widiartana" width="425" height="425" decoding="async" />
       </div>
     </section>
   );
@@ -352,22 +352,9 @@ function Contact() {
 function LoadingScreen({ isExiting }: { isExiting: boolean }) {
   return (
     <div className={`loading-screen${isExiting ? " is-exiting" : ""}`} role="status" aria-live="polite" aria-label="Memuat portofolio Bayu Widiartana">
-      <div className="loading-content">
-        <div className="loading-orbit" aria-hidden="true">
-          <span className="loading-orbit-track" />
-          <span className="loading-orbit-satellite satellite-one" />
-          <span className="loading-orbit-satellite satellite-two" />
-          <span className="loading-orbit-core">BW</span>
-        </div>
-
-        <div className="loading-copy">
-          <span>Orbital Archive</span>
-          <strong>Memuat portofolio</strong>
-        </div>
-
-        <div className="loading-progress" aria-hidden="true">
-          <span />
-        </div>
+      <div className="loader-wrapper" aria-hidden="true">
+        <span className="loader-word">Loading</span>
+        <div className="loader" />
       </div>
     </div>
   );
@@ -429,7 +416,7 @@ export default function App() {
     const minimumTimer = window.setTimeout(() => {
       hasReachedMinimumTime = true;
       closeLoadingScreen();
-    }, 700);
+    }, 2500);
 
     const fallbackTimer = window.setTimeout(markPageReady, 1500);
 
