@@ -404,6 +404,10 @@ img {
     pointer-events: none;
   }
 
+  .hero-portrait {
+    top: -35px;
+  }
+
   .hero-actions,
   .hero-actions a {
     pointer-events: auto;
