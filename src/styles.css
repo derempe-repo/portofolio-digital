@@ -751,7 +751,7 @@ img {
   padding: 24px;
   background: rgba(2, 5, 8, 0.9);
   backdrop-filter: blur(20px);
-  animation: backdrop-in 160ms ease-out both;
+  animation: backdrop-in 220ms ease-out both;
 }
 
 .project-detail-modal {
@@ -765,7 +765,16 @@ img {
   border-radius: var(--radius);
   background: rgba(13, 18, 25, 0.96);
   box-shadow: var(--shadow);
-  animation: modal-in 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: modal-in 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.project-detail-backdrop.is-closing {
+  pointer-events: none;
+  animation: backdrop-out 220ms ease-in both;
+}
+
+.project-detail-backdrop.is-closing .project-detail-modal {
+  animation: modal-out 280ms cubic-bezier(0.7, 0, 0.84, 0) both;
 }
 
 @keyframes backdrop-in {
@@ -781,12 +790,34 @@ img {
 @keyframes modal-in {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.99);
+    transform: translateY(24px) scale(0.97);
   }
 
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes backdrop-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
   }
 }
 
@@ -1294,5 +1325,15 @@ img {
   .loading-screen .loader {
     animation-duration: 2.5s !important;
     animation-iteration-count: infinite !important;
+  }
+
+  .project-detail-backdrop,
+  .project-detail-backdrop.is-closing {
+    animation-duration: 220ms !important;
+  }
+
+  .project-detail-modal,
+  .project-detail-backdrop.is-closing .project-detail-modal {
+    animation-duration: 280ms !important;
   }
 }

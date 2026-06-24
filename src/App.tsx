@@ -184,9 +184,9 @@ function ProjectCard({ project, index, onSelect }: { project: Project; index: nu
   );
 }
 
-function ProjectDetailModal({ project, onClose }: { project: Project; onClose: () => void }) {
+function ProjectDetailModal({ project, isClosing, onClose }: { project: Project; isClosing: boolean; onClose: () => void }) {
   return createPortal(
-    <div className="project-detail-backdrop" onClick={onClose}>
+    <div className={`project-detail-backdrop${isClosing ? " is-closing" : ""}`} onClick={isClosing ? undefined : onClose}>
       <article className="project-detail-modal" role="dialog" aria-modal="true" aria-labelledby="project-detail-title" aria-describedby="project-detail-summary" onClick={(event) => event.stopPropagation()}>
         <button className="detail-close" type="button" onClick={onClose} aria-label="Tutup detail proyek" autoFocus>
           <X aria-hidden="true" weight="bold" />
@@ -249,14 +249,36 @@ function ProjectDetailModal({ project, onClose }: { project: Project; onClose: (
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalClosing, setIsModalClosing] = useState(false);
+
+  const openProjectDetail = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalClosing(false);
+  };
+
+  const closeProjectDetail = () => {
+    if (isModalClosing) return;
+    setIsModalClosing(true);
+  };
+
+  useEffect(() => {
+    if (!isModalClosing) return undefined;
+
+    const exitTimer = window.setTimeout(() => {
+      setSelectedProject(null);
+      setIsModalClosing(false);
+    }, 280);
+
+    return () => window.clearTimeout(exitTimer);
+  }, [isModalClosing]);
 
   useEffect(() => {
     if (!selectedProject) return undefined;
 
     const previousOverflow = document.body.style.overflow;
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setSelectedProject(null);
+      if (event.key === "Escape" && !isModalClosing) {
+        setIsModalClosing(true);
       }
     };
 
@@ -266,7 +288,7 @@ function Projects() {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedProject]);
+  }, [isModalClosing, selectedProject]);
 
   return (
     <section className="section-panel projects-section" id="projects" aria-labelledby="projects-title">
@@ -277,11 +299,11 @@ function Projects() {
 
       <div className="project-gallery">
         {projects.map((project, index) => (
-          <ProjectCard project={project} index={index} onSelect={setSelectedProject} key={project.title} />
+          <ProjectCard project={project} index={index} onSelect={openProjectDetail} key={project.title} />
         ))}
       </div>
 
-      {selectedProject ? <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}
+      {selectedProject ? <ProjectDetailModal project={selectedProject} isClosing={isModalClosing} onClose={closeProjectDetail} /> : null}
     </section>
   );
 }
