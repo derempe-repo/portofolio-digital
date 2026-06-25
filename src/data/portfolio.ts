@@ -60,7 +60,7 @@ export const navItems: NavItem[] = [
 export const profileFacts: ProfileFact[] = [
   { label: "Nama lengkap", value: "I Putu Bayu Widiartana" },
   { label: "Program studi", value: "Teknologi Informasi" },
-  { label: "Fokus utama", value: "Full-Stack Web Development" },
+  { label: "Fokus utama", value: "Fokus pada pengembangan web full-stack dengan optimasi performa" },
   { label: "Tujuan karier", value: "Menjadi Web Developer yang membangun produk digital berdampak." },
 ];
 

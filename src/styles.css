@@ -501,7 +501,9 @@ img {
 .fact-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
+  align-items: stretch;
+  grid-auto-rows: minmax(132px, auto);
 }
 
 .fact-item,
@@ -514,21 +516,60 @@ img {
 }
 
 .fact-item {
-  min-height: 138px;
-  padding: 20px;
+  position: relative;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  padding: clamp(18px, 2vw, 24px);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.fact-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.95), rgba(125, 211, 252, 0.08));
+  opacity: 0.75;
+}
+
+.fact-item:hover {
+  border-color: rgba(125, 211, 252, 0.32);
+  background: rgba(18, 28, 39, 0.86);
+  transform: translateY(-2px);
 }
 
 .fact-item span {
-  display: block;
-  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
   color: var(--muted);
   font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.fact-item span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(125, 211, 252, 0.5);
 }
 
 .fact-item strong {
+  display: block;
   color: var(--text);
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
-  line-height: 1.25;
+  font-size: clamp(1.02rem, 1.35vw, 1.24rem);
+  line-height: 1.38;
+  text-wrap: balance;
 }
 
 .highlight-grid {
@@ -1220,6 +1261,11 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .fact-grid {
+    gap: 10px;
+    grid-auto-rows: auto;
+  }
+
   .project-card h3 {
     min-height: auto;
   }
@@ -1232,6 +1278,24 @@ img {
     background: #111821;
     backdrop-filter: none;
     box-shadow: none;
+  }
+
+  .fact-item {
+    gap: 12px;
+    padding: 18px;
+    transition:
+      border-color 160ms ease,
+      background 160ms ease;
+    transform: none;
+  }
+
+  .fact-item:hover {
+    transform: none;
+  }
+
+  .fact-item strong {
+    font-size: 1.02rem;
+    line-height: 1.42;
   }
 
   .project-card {
